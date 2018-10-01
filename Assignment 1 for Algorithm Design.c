@@ -99,7 +99,7 @@ double massSubtract (int n_size, int printOn, int sampleSize)
 {
     int *array = malloc(sizeof(int) * n_size);
     int i = 0, j = 0, k = 0, l = 0;
-    int ffirst = 0, fsecond = 0, first = 0, second = 0, neg = 0, place = 0, ignore = 0;
+    int ffirst = 0, fsecond = 0, first = 0, second = 0, neg = 0, place = 0, ignore = 0, set = 0;
     clock_t t = clock();
     double time_taken = 0;
 
@@ -130,7 +130,16 @@ double massSubtract (int n_size, int printOn, int sampleSize)
             fsecond = rand()%10;
             place++;
             if (place >= n_size)
+            {
+                set = 1;
                 break;
+            }
+        }
+        if (set == 1)
+        {
+            if (printOn == 1)
+                printf("Every number has matched! The resulting number is 0.\n");
+            continue;
         }
 
         if (ffirst > fsecond)
