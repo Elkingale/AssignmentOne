@@ -129,6 +129,8 @@ double massSubtract (int n_size, int printOn, int sampleSize)
             ffirst = rand()%10;
             fsecond = rand()%10;
             place++;
+            if (place >= n_size)
+                break;
         }
 
         if (ffirst > fsecond)
