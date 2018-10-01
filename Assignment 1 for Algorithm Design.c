@@ -105,7 +105,7 @@ double massSubtract (int n_size, int printOn, int sampleSize)
 
     for (i = 0; i < sampleSize; i++)
     {
-        neg = 0, place = 0, ignore = 1;
+        neg = 0, place = 0, ignore = 1, set = 0;
         ffirst = rand()%10;
         fsecond = rand()%10;
         memset(array, 0, n_size * sizeof(int));
